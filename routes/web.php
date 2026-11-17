@@ -5,6 +5,7 @@ use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmployeController;
+use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
     return redirect()->route('mahasiswa.index');
@@ -42,4 +43,4 @@ Route::get('/employe/edit/{employe}',[EmployeController::class, 'show']);
 Route::put('/employe/{employe}',[EmployeController::class, 'update']);
 Route::delete('/employe/{employe}',[EmployeController::class, 'destroy']);
 
-    
+Route::resource('admin', AdminController::class);
